@@ -26,42 +26,81 @@ public class Algebra {
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		int sum = x1;
+		for (int i =0; i<x2; i++) // רץ X2 פעמים
+		{
+			sum++;
+		}
+		return sum;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		int minus = x1;
+		for (int i =0; i<x2; i++) // רץ X2 פעמים
+		{
+			minus--;
+		}
+		return minus;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		int multiply =0;
+		for (int i =0; i<x2; i++)
+		{
+			multiply = plus(multiply, x1); // מריץ את פעולת החיבור X2 פעמים
+		}
+		return multiply;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		// Replace the following statement with your code
-		return 0;
+		int power = 1; //
+		for (int i=0;i<n;i++)
+		{
+			power = times (x,power); //מריץ את פעולת הכפל N פעמים
+		}
+		return power;
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		int multi = x2;
+		int count=0; //  
+		while (multi<=x1) // בודק כמה פעמים שלמות X1 "נכנס" בX2		{
+		{
+		multi = plus(multi, x2); 
+			count++;
+		}
+		return count;
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		int divider = div(x1, x2); // משתמש בפונקציית החלוקה לבדווק כמה פעמים שלמות X2 נכנס בX1
+		int timer = times(divider, x2); // המספר השלם ללא השארית
+		int modular = minus(x1, timer);// חישוב השארית
+		return modular;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
 		// Replace the following statement with your code
-		return 0;
+		int num = 0;
+		while (times(num, num)<x)
+		{
+			num++;
+		}
+		if (times(num, num)>x)
+		{
+			num --;
+		}
+		return num;
 	}	  	  
 }
