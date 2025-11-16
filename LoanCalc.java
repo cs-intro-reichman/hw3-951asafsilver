@@ -62,11 +62,7 @@ public class LoanCalc
     {
     iterationCounter = 0; 
     double minpayment = loan / n; //ערך מינימאלי
-    double maxpayment = minpayment; 
-    while (endBalance(loan, rate, n, maxpayment) > 0)// מוצא ערך מקסימלי
-	{
-        maxpayment = maxpayment * 2; 
-    }
+    double maxpayment = loan; // ערך מקסימלי
     double midpayment = (minpayment + maxpayment) / 2;
     while ((maxpayment - minpayment) > epsilon) // כל עוד הטווח גדול מאפסילון
 	{ 
